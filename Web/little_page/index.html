@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Маленькая страничка</title>
+    <link href='//fonts.googleapis.com/css?famile=PT+Sans:400,700&subset=cyrillic' rel='stylesheets' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+  </head>
+  <body>
+        <p>Параграф с <button>кнопкой </button>.</p>
+        <script>
+          var para = document.querySelector("p");
+          var button = document.querySelector("button");
+          para.addEventListener("mousedown", function() {
+            alert("Обработчик параграфа.");
+          });
+          button.addEventListener("mousedown", function(event) {
+            console.log("Обработчик кнопки.");
+            if (event.which == 3)
+              event.stopPropagation();
+          });
+        </script>
+        <p>Страница по нажатию V офиолетивает.</p>
+        <script>
+          addEventListener("keydown", function(event) {
+            if (event.keyCode == 86)
+              document.body.style.background = "violet";
+          });
+          addEventListener("keyup", function(event) {
+            if (event.keyCode == 86)
+              document.body.style.background = "";
+          });
+        </script>
+        <p>Переместите мышь для увеличения ширины:</p>
+        <div style="background: orange; width: 60px; height: 20px">
+        </div>
+        <script>
+          var lastX; // Последняя позиция мыши
+          var rect = document.querySelector("div");
+          rect.addEventListener("mousedown", function(event) {
+            if (event.which == 1) {
+              lastX = event.pageX;
+              addEventListener("mousemove", moved);
+              event.preventDefault(); // Запретим выделение
+            }
+          });
+
+          function moved(event) {
+            if (event.which != 1) {
+              removeEventListener("mousemove", moved);
+            } else {
+              var dist = event.pageX - lastX;
+              var newWidth = Math.max(10, rect.offsetWidth + dist);
+              rect.style.width = newWidth + "px";
+              lastX = event.pageX;
+            }
+          }
+        </script>
+        <p>Наведите мышь на этот <strong>параграф </strong>.</p>
+        <script>
+          var para = document.querySelector("p");
+          function isInside(node, target) {
+            for (; node != null; node = node.parentNode)
+              if (node == target) return true;
+          }
+          para.addEventListener("mouseover", function(event) {
+            if (!isInside(event.relatedTarget, para))
+              para.style.color = "red";
+          });
+          para.addEventListener("mouseout", function(event) {
+            if (!isInside(event.relatedTarget, para))
+              para.style.color = "";
+          });
+        </script>
+        <p>Имя: <input type="text" data-help="Ваше полное имя"></p>
+        <p>Возраст: <input type="text" data-help="Возраст в годах"></p>
+        <p id="help"></p>
+
+        <script>
+          var help = document.querySelector("#help");
+          var fields = document.querySelectorAll("input");
+          for (var i = 0; i < fields.length; i++) {
+            fields[i].addEventListener("focus", function(event) {
+              var text = event.target.getAttribute("data-help");
+              help.textContent = text;
+            });
+            fields[i].addEventListener("blur", function(event) {
+              help.textContent = "";
+            });
+          }
+        </script>
+  </body>
+</html>
