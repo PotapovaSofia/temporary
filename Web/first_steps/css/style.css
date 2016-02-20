@@ -1,0 +1,16 @@
+.all_block {
+	width: 1000px;
+}
+
+
+.reg-form{
+	display: block;
+	text-align: center;
+	border: 1px solid;
+	background: gray;
+	border-radius: 10px;
+	color: white;
+	width: 450px;
+	float: left;
+	margin-left: 45%;
+}

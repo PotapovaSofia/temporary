@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Испытание: многоуровневое меню</title>
+    </head>
+    <body>
+        <ul class="main-menu">
+            <li class="active">
+                <a href="/courses">Курсы</a>
+                <ul>
+                    <li><a href="/courses/4">Знакомство</a></li>
+                    <li><a href="/courses/42">Селекторы</a></li>
+                    <li><a href="/courses/45">Позиционирование</a></li>
+                </ul>
+            </li>
+            <li><a href="/demos">Демонстрации</a></li>
+            <li><a href="/public_profiles">Участники</a></li>
+            <li><a href="/achievments">Достижения</a></li>
+        </ul>
+    </body>
+</html>

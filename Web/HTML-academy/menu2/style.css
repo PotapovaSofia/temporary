@@ -1,0 +1,52 @@
+body {
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.main-menu {
+    width: 180px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-menu a {
+    display: block;
+    margin-bottom: -1px;
+    padding: 8px 14px;
+    color: #0088CC;
+    text-decoration: none;
+    border: 1px solid #E5E5E5;
+}
+
+.main-menu a:hover {
+    background: #F5F5F5;
+}
+
+.main-menu > li {
+    position: relative;
+}
+
+.main-menu .sub-menu {
+    display:none;
+    position: absolute;
+    top: 5px;
+    left: 170px;
+    z-index: 10;
+    width: 150px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #FCF8E3;
+}
+
+
+/* Cелектор для подменю, если навести мышь */
+/* на родительский элемент верхнего меню */
+
+.main-menu > li:hover .sub-menu{
+    display:block;
+
+}

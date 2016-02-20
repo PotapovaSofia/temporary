@@ -1,0 +1,13 @@
+data = load('ex1data1.txt' );
+X = data(:, 1);
+y = data(:, 2);
+plot(X, y, 'rx', 'MarkerSize', 10);
+ylabel('Profit in $10000');
+xlabel('Population of City in 10000s');
+m = length(y);
+X = [ones(m, 1), X];
+theta = zeros(2,1);
+alpha = 0.01;
+//theta = theta - alpha * (1 / m) * ((theta' * X - y) * X);
+J = computeCost(X, y, theta);
+[a, b] = gradientDecsent(X, y, theta, alpha, 1500);

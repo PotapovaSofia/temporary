@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Испытание: строим сетку</title>
+       <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="layout.css">
+    </head>
+    <body>
+        <div class="header clearfix">
+            <div class=centering>
+                <div class=content>
+                    Header
+                </div>
+            </div>
+        </div>
+        <div class="menu clearfix">
+            <div class=centering>
+                <div class=content>
+                    Menu
+                </div>
+            </div>
+        </div>
+        <div class="header clearfix">
+            <div class=centering>
+                <div class=content-column>
+                    Promo 1
+                </div>
+                <div class=content-column>
+                    Promo 2
+                </div>
+            </div>
+        </div>
+        <div class=middle>
+            <div class=centering>
+                <div class=content-column>
+                    Left
+                </div>
+                <div class=content-column>
+                    Main
+                </div>
+                <div class=content-column>
+                    Right
+                </div>
+            </div>
+        </div>
+        <div class="footer clearfix">
+            <div class=centering>
+                <div class=content>
+                    Footer
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
